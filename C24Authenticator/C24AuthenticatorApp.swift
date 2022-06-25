@@ -13,6 +13,18 @@ struct C24AuthenticatorApp: App {
 
     init() {
         controller = AppController()
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+// Testing
+extension C24AuthenticatorApp {
+    func testing() {
         let key = controller.generateKey()
         print("key is \(key)")
 
@@ -52,12 +64,6 @@ struct C24AuthenticatorApp: App {
             print("code is \(code)")
         } else {
             print("unable to find code")
-        }
-    }
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
         }
     }
 }

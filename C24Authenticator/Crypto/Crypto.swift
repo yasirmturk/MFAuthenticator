@@ -9,12 +9,6 @@ import CryptoSwift
 import Foundation
 import Security
 
-struct Payload {
-    let version: String
-    let label: String
-    let token: String
-}
-
 final class Crypto {
     func generateKey(label: String) -> String {
         if let heimdall = Heimdall(tagPrefix: label, keySize: 1024), let publicKeyData = heimdall.publicKeyDataX509() {
@@ -38,14 +32,14 @@ final class Crypto {
     }
 
     func decrypt(payLoad: Payload) -> String? {
-        // guard let data = Data(base64Encoded: payLoad.token) else { return nil }
-        // if let decrypted = try? RSAUtils.decryptWithRSAPrivateKey(encryptedData: data, privkeyBase64: findPrivateKey(label: payLoad.label), tagName: payLoad.label + ".private") {
-        //     return String(data: decrypted, encoding: .utf8)
-        // } else {
-        //     return nil
-        // }
-        guard let heimdall = Heimdall(tagPrefix: payLoad.label) else { return nil }
-
-        return heimdall.decrypt(payLoad.token, urlEncoded: false)
+        guard let data = Data(base64Encoded: payLoad.token) else { return nil }
+        if let decrypted = try? RSAUtils.decryptWithRSAPrivateKey(encryptedData: data, privkeyBase64: findPrivateKey(label: payLoad.label), tagName: payLoad.label + ".private") {
+            return String(data: decrypted, encoding: .utf8)
+        } else {
+            return nil
+        }
+        // guard let heimdall = Heimdall(tagPrefix: payLoad.label) else { return nil }
+        //
+        // return heimdall.decrypt(payLoad.token, urlEncoded: false)
     }
 }

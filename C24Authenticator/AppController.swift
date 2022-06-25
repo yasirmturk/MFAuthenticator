@@ -41,24 +41,7 @@ final class AppController {
     }
 
     func decryptPayLoad(data: String) -> String? {
-        guard let payLoad = parsePayload(data) else { return nil }
+        guard let payLoad = Payload(data) else { return nil }
         return crypto.decrypt(payLoad: payLoad)
-    }
-
-    private func parsePayload(_ data: String) -> Payload? {
-        let parts = data.split(separator: ";")
-        guard let version = parts.first(where: { $0.starts(with: "v=") })?.replacingOccurrences(of: "v=", with: ""),
-              let label = parts.first(where: { $0.starts(with: "l=") })?.replacingOccurrences(of: "l=", with: ""),
-              let b64 = parts.first(where: { $0.starts(with: "t=") })?.replacingOccurrences(of: "t=", with: "") else {
-            return nil
-        }
-        print("version found \(version)")
-        print("label found \(label)")
-        print("token found \(b64)")
-        return Payload(version: version, label: label, token: b64)
-        // if let tokenData = Data(base64Encoded: b64) {
-        // } else {
-        //     return nil
-        // }
     }
 }
