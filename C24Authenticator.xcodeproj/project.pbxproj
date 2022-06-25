@@ -14,6 +14,12 @@
 		4FDF59622865C2040097E795 /* C24AuthenticatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF59612865C2040097E795 /* C24AuthenticatorTests.swift */; };
 		4FDF596C2865C2040097E795 /* C24AuthenticatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF596B2865C2040097E795 /* C24AuthenticatorUITests.swift */; };
 		4FDF596E2865C2040097E795 /* C24AuthenticatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF596D2865C2040097E795 /* C24AuthenticatorUITestsLaunchTests.swift */; };
+		4FDF597C2865D40C0097E795 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF597B2865D40C0097E795 /* Crypto.swift */; };
+		4FDF597E2865D6CF0097E795 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF597D2865D6CF0097E795 /* AppController.swift */; };
+		4FDF598B2865DD1F0097E795 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4FDF598A2865DD1F0097E795 /* CryptoSwift */; };
+		4FDF598E2865DF220097E795 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 4FDF598D2865DF220097E795 /* KeychainAccess */; };
+		4FDF59902865E1960097E795 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF598F2865E1960097E795 /* RSAUtils.swift */; };
+		4FDF59922865E53F0097E795 /* Heimdall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDF59912865E53F0097E795 /* Heimdall.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,10 @@
 		4FDF59672865C2040097E795 /* C24AuthenticatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C24AuthenticatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDF596B2865C2040097E795 /* C24AuthenticatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C24AuthenticatorUITests.swift; sourceTree = "<group>"; };
 		4FDF596D2865C2040097E795 /* C24AuthenticatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C24AuthenticatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FDF597B2865D40C0097E795 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		4FDF597D2865D6CF0097E795 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		4FDF598F2865E1960097E795 /* RSAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
+		4FDF59912865E53F0097E795 /* Heimdall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heimdall.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDF598E2865DF220097E795 /* KeychainAccess in Frameworks */,
+				4FDF598B2865DD1F0097E795 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +106,8 @@
 		4FDF594F2865C2010097E795 /* C24Authenticator */ = {
 			isa = PBXGroup;
 			children = (
+				4FDF597A2865D3F70097E795 /* Crypto */,
+				4FDF597D2865D6CF0097E795 /* AppController.swift */,
 				4FDF59502865C2010097E795 /* C24AuthenticatorApp.swift */,
 				4FDF59522865C2010097E795 /* ContentView.swift */,
 				4FDF59542865C2030097E795 /* Assets.xcassets */,
@@ -127,6 +141,16 @@
 			path = C24AuthenticatorUITests;
 			sourceTree = "<group>";
 		};
+		4FDF597A2865D3F70097E795 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				4FDF59912865E53F0097E795 /* Heimdall.swift */,
+				4FDF598F2865E1960097E795 /* RSAUtils.swift */,
+				4FDF597B2865D40C0097E795 /* Crypto.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +167,10 @@
 			dependencies = (
 			);
 			name = C24Authenticator;
+			packageProductDependencies = (
+				4FDF598A2865DD1F0097E795 /* CryptoSwift */,
+				4FDF598D2865DF220097E795 /* KeychainAccess */,
+			);
 			productName = C24Authenticator;
 			productReference = 4FDF594D2865C2010097E795 /* C24Authenticator.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +243,10 @@
 				Base,
 			);
 			mainGroup = 4FDF59442865C2010097E795;
+			packageReferences = (
+				4FDF59892865DD1F0097E795 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				4FDF598C2865DF220097E795 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 4FDF594E2865C2010097E795 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDF597C2865D40C0097E795 /* Crypto.swift in Sources */,
+				4FDF59922865E53F0097E795 /* Heimdall.swift in Sources */,
 				4FDF59532865C2010097E795 /* ContentView.swift in Sources */,
 				4FDF59512865C2010097E795 /* C24AuthenticatorApp.swift in Sources */,
+				4FDF59902865E1960097E795 /* RSAUtils.swift in Sources */,
+				4FDF597E2865D6CF0097E795 /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -577,6 +613,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4FDF59892865DD1F0097E795 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		4FDF598C2865DF220097E795 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4FDF598A2865DD1F0097E795 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FDF59892865DD1F0097E795 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		4FDF598D2865DF220097E795 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FDF598C2865DF220097E795 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FDF59452865C2010097E795 /* Project object */;
 }
