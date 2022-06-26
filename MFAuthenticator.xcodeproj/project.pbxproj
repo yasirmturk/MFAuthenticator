@@ -85,13 +85,11 @@
 		4FDF594F2865C2010097E795 /* MFAuthenticator */ = {
 			isa = PBXGroup;
 			children = (
+				4FDF59992868FEF90097E795 /* App */,
 				4FDF597A2865D3F70097E795 /* Crypto */,
-				4FDF597D2865D6CF0097E795 /* AppController.swift */,
-				4FDF59502865C2010097E795 /* MFAuthenticatorApp.swift */,
 				4FDF59522865C2010097E795 /* ContentView.swift */,
 				4FDF59542865C2030097E795 /* Assets.xcassets */,
 				4FDF59562865C2030097E795 /* Preview Content */,
-				4FDF5997286730AD0097E795 /* Payload.swift */,
 			);
 			path = MFAuthenticator;
 			sourceTree = "<group>";
@@ -115,6 +113,7 @@
 		4FDF597A2865D3F70097E795 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				4FDF5997286730AD0097E795 /* Payload.swift */,
 				4FDF599628672C160097E795 /* Lib */,
 				4FDF597B2865D40C0097E795 /* Crypto.swift */,
 			);
@@ -128,6 +127,15 @@
 				4FDF598F2865E1960097E795 /* RSAUtils.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		4FDF59992868FEF90097E795 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4FDF597D2865D6CF0097E795 /* AppController.swift */,
+				4FDF59502865C2010097E795 /* MFAuthenticatorApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
