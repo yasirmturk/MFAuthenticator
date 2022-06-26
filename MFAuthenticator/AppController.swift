@@ -1,6 +1,6 @@
 //
 //  AppController.swift
-//  C24Authenticator
+//  MFAuthenticator
 //
 //  Created by Yasir Turk on 24.06.22.
 //

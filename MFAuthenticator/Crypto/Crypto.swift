@@ -1,11 +1,10 @@
 //
 //  Crypto.swift
-//  C24Authenticator
+//  MFAuthenticator
 //
 //  Created by Yasir Turk on 24.06.22.
 //
 
-import CryptoSwift
 import Foundation
 import Security
 

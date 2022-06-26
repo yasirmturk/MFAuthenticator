@@ -1,6 +1,6 @@
 //
 //  Payload.swift
-//  C24Authenticator
+//  MFAuthenticator
 //
 //  Created by Yasir Turk on 25.06.22.
 //

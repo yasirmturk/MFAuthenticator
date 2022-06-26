@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  C24Authenticator
+//  MFAuthenticator
 //
 //  Created by Yasir Turk on 24.06.22.
 //
@@ -46,7 +46,7 @@ struct ContentView: View {
         }
         .padding()
         .sheet(isPresented: $isPresentingScanner) {
-            CodeScannerView(codeTypes: [.qr], simulatedData: "C24 Authenticator") { response in
+            CodeScannerView(codeTypes: [.qr], simulatedData: "MF Authenticator") { response in
                 switch response {
                 case .success(let result):
                     message = "Received token: \(result.string)"

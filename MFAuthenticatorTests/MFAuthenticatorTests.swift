@@ -1,14 +1,14 @@
 //
-//  C24AuthenticatorTests.swift
-//  C24AuthenticatorTests
+//  MFAuthenticatorTests.swift
+//  MFAuthenticatorTests
 //
 //  Created by Yasir Turk on 24.06.22.
 //
 
 import XCTest
-@testable import C24Authenticator
+@testable import MFAuthenticator
 
-class C24AuthenticatorTests: XCTestCase {
+class MFAuthenticatorTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
