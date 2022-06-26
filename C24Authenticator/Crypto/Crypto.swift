@@ -9,8 +9,10 @@ import CryptoSwift
 import Foundation
 import Security
 
-final class Crypto {
-    func generateKey(label: String) -> String {
+struct Crypto {
+    let label: String
+    
+    func generateKey() -> String {
         if let heimdall = Heimdall(tagPrefix: label, keySize: 1024), let publicKeyData = heimdall.publicKeyDataX509() {
             return publicKeyData.base64EncodedString()
         }
@@ -24,7 +26,7 @@ final class Crypto {
         return "not found for label \(label)"
     }
 
-    func findKey(label: String) -> String {
+    func findKey() -> String {
         if let heimdall = Heimdall(tagPrefix: label), let pubKeyData = heimdall.publicKeyData() {
             return pubKeyData.base64EncodedString()
         }
@@ -33,13 +35,13 @@ final class Crypto {
 
     func decrypt(payLoad: Payload) -> String? {
         guard let data = Data(base64Encoded: payLoad.token) else { return nil }
-        if let decrypted = try? RSAUtils.decryptWithRSAPrivateKey(encryptedData: data, privkeyBase64: findPrivateKey(label: payLoad.label), tagName: payLoad.label + ".private") {
+        let privateKey = findPrivateKey(label: payLoad.label)
+        if let decrypted = try? RSAUtils.decryptWithRSAPrivateKey(
+            encryptedData: data, privkeyBase64: privateKey, tagName: payLoad.label + ".private"
+        ) {
             return String(data: decrypted, encoding: .utf8)
         } else {
             return nil
         }
-        // guard let heimdall = Heimdall(tagPrefix: payLoad.label) else { return nil }
-        //
-        // return heimdall.decrypt(payLoad.token, urlEncoded: false)
     }
 }

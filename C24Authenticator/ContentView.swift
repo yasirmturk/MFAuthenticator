@@ -13,7 +13,7 @@ struct ContentView: View {
     private let crypto: Crypto
 
     init() {
-        crypto = Crypto()
+        crypto = Crypto(label: "check24")
     }
 
     @State private var showingAlert = false
@@ -25,12 +25,12 @@ struct ContentView: View {
     @State private var token: String = ""
     
     var body: some View {
-        Text("Hello, C24 Authenticator!")
+        Text("Hello, MY Authenticator!")
             .padding()
 
         Button("Generate Key") {
             print("Key generated")
-            key = crypto.generateKey(label: "check24")
+            key = crypto.generateKey()
             showingAlert = true
         }
         .padding()
